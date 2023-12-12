@@ -18,11 +18,8 @@ namespace MarketApi
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
             builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
-            builder.Services.AddScoped<ICarsRepostory, CarsRepostory>();
-            builder.Services.AddScoped<ICustomerRepostory, CustomerRepostory>();
-            builder.Services.AddScoped<ISalesRepository, SalesRepository>();
-            builder.Services.AddScoped<IPartsRepository, PartsRepository>();
-            builder.Services.AddScoped<ISuppliersRepository, SuppliersRepository>();
+            builder.Services.AddScoped<IProductsRepostory1, ProductsRepostory>();
+            
 
 
             builder.Services.AddControllers().AddNewtonsoftJson(options =>
@@ -32,7 +29,7 @@ namespace MarketApi
 
             builder.Services.AddDbContext<MyDbContext>(options =>
             {
-                options.UseSqlServer(builder.Configuration["ConnectionStrings:CarsStroeDb"]);
+                options.UseSqlServer(builder.Configuration["ConnectionStrings:ProductsStroeDb"]);
             });
 
 

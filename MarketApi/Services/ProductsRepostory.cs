@@ -20,11 +20,11 @@ namespace MarketApi.Services
 
         public async Task deleteProduct(int id)
         {
-            var car = await myDb.Products.FindAsync(id);
+            var product = await myDb.Products.FindAsync(id);
 
-            if (car != null)
+            if (product != null)
             {
-                myDb.Products.Remove(car);
+                myDb.Products.Remove(product);
                 await myDb.SaveChangesAsync();
             }
 
@@ -34,7 +34,6 @@ namespace MarketApi.Services
         {
 
             return await myDb.Products
-                //.OrderBy((c=>c.Year)
 
                 .ToListAsync();
 
@@ -65,7 +64,7 @@ namespace MarketApi.Services
 
         public async Task<Product> createProudct(ProductWithoutId productData)
         {
-            //get The Parts from PartsId Whene User Pass Him by NewCar
+            //create The Proudcts and reyutn iy with id
 
             var product = new Product() { createdAt = DateTime.Now, description = productData.description, price = productData.price, name = productData.name };
 

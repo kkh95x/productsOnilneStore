@@ -1,16 +1,27 @@
-<body>
+<body dir="rtl">
  
-<h1>
-    Products
+<h1 style="text-align: center;">
+    متجر السعادة أونلاين
 </h1>
-<h5>
-    {{count}} Products 
+<h5  style="text-align: center;">
+    {{count}} منتج  
 
 </h5>
-<input type="button" (onclick)="refresh()" value="refresh" >
+<!-- <input  type="button" (onclick)="refresh()" value="refresh" > -->
+<!-- src/app/product-grid/product-grid.component.html -->
+<div class="product-grid">
+	<div class="product-card" *ngFor="let product of products">
+	  <img [src]="product.photoUrl" alt="{{ product.nameProduct }} photo">
+	  <h3>{{ product.nameProduct }}</h3>
+	  <p>
+		<span class="color-circle" [style.background-color]="product.color"></span>
+		  Color: {{ product.color }}  <p>Price: ${{ product.price | number:'1.2-2' }}</p>
+	</div>
+  </div>
+  
 
 <!-- <p>Table is just a mapping of objects to table rows with <code>ngFor</code></p> -->
-
+<!-- 
 <table class="table table-striped">
 	<thead>
 		<tr>
@@ -40,5 +51,5 @@
 			
 		</tr>
 	</tbody>
-</table>
+</table> -->
 </body>

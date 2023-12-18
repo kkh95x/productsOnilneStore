@@ -12,3 +12,29 @@ h5{
     color: gray;
 
 }
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 2fr);
+    gap: 100px;
+    padding: 50px;
+  }
+  
+  .product-card {
+    border: 1px solid #ccc;
+    padding: 15px;
+    text-align: center;
+  }
+  
+  .product-card img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+  }
+  
+.color-circle {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    margin-right: 5px;
+  }

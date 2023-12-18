@@ -2,19 +2,33 @@
 import { Product } from "../model/product";
 import { ProductsRepository } from "./products_repository";
 import { Injectable } from "@angular/core";
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+
 @Injectable(
     {
         providedIn:`root`
     }
 )
 export class ProductsService implements ProductsRepository{
+    private apiUrlp = 'https://localhost:7265/api/Products'; // Replace with your API endpoint
+    private apiUrla = 'https://localhost:7265/a'; // Replace with your API endpoint
 
-    
-    getAllProducts(): Product[] {
-       return   products;
+    constructor(private http: HttpClient) {}
+
+     getAllProducts(): Promise<any> {
+      return this.http.get<any>(this.apiUrlp).toPromise();
+       
+    ;
     }
-    saveProduct(product: Product): void {
-       products.push(product);
+   async saveProduct(product: Product) {
+        await this.http.post<any>(this.apiUrla,{
+            createdAt: "2023-12-18T13:40:48.495Z",
+            "name": product.nameProduct,
+            "description": product.catogery,
+            "price": product.price,
+            "photoUrl": product.photoUrl
+        }).toPromise()
     }
 
 }

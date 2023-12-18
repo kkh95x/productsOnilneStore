@@ -23,7 +23,7 @@ namespace MarketApi
 
 
             builder.Services.AddControllers().AddNewtonsoftJson(options =>
-    options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore
+            options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore
 );
 
 
@@ -42,7 +42,12 @@ namespace MarketApi
                 app.UseSwaggerUI();
             }
 
+
             app.UseHttpsRedirection();
+            app.UseCors(x => x
+            .AllowAnyOrigin()
+            .AllowAnyMethod()
+            .AllowAnyHeader());
             app.UseAuthentication();
 
             app.UseAuthorization();

@@ -84,6 +84,7 @@ namespace MarketApi.Services
                 product.description = productData.description;
                 product.name = productData.name;
                 product.price = productData.price;
+                product.photoUrl = productData.photoUrl;
 
 
                 await myDb.SaveChangesAsync();

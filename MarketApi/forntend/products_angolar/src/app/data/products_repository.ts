@@ -1,5 +1,6 @@
+import { Observable } from "rxjs";
 import { Product } from "../model/product";
 export interface ProductsRepository{
- getAllProducts ():Product[];
+ getAllProducts (): Promise<any>;
  saveProduct(product: Product):void;
 }

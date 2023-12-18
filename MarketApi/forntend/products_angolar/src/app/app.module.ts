@@ -8,19 +8,24 @@ import { AddProductsComponent } from './add-products/add-products.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgbPaginationModule, NgbAlertModule } from '@ng-bootstrap/ng-bootstrap';
 import { ProductsService } from './data/local_server_products_repository';
+import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
     ProductsListComponent,
-    AddProductsComponent
+    AddProductsComponent,
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModule,
     NgbPaginationModule,
-     NgbAlertModule
+     NgbAlertModule,
+     HttpClientModule, 
+     ReactiveFormsModule
   ],
   providers:[ProductsService],
   bootstrap: [AppComponent]

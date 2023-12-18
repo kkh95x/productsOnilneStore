@@ -1,0 +1,11 @@
+<body>
+    <input class="form-control form-control-lg" value="{{name}}" type="text" placeholder="Name Product">
+    <input class="form-control form-control-lg" value="{{price}}" type="text" placeholder="Price" type="number">
+
+    <select class="form-control form-control-lg"  >
+        <option *ngFor="let catogery of catogerys; index as i" value="{{catogery}}">{{catogery}}</option>
+      </select>
+    <input class="form-control form-control-lg" type="text" placeholder="Photo Url">
+    <input type="button" (onclick)="saveProject()" value="SAVE PRODUCT" class="btn btn-primary">
+
+</body>

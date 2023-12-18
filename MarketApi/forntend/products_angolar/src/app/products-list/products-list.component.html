@@ -1,0 +1,44 @@
+<body>
+ 
+<h1>
+    Products
+</h1>
+<h5>
+    {{count}} Products 
+
+</h5>
+<input type="button" (onclick)="refresh()" value="refresh" >
+
+<!-- <p>Table is just a mapping of objects to table rows with <code>ngFor</code></p> -->
+
+<table class="table table-striped">
+	<thead>
+		<tr>
+			<th scope="col">#</th>
+			<th scope="col">Name</th>
+			<th scope="col">Color</th>
+
+			<th scope="col">Price</th>
+			<th scope="col">Catogery</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr *ngFor="let product of products; index as i">
+			<th scope="row">{{ i + 1 }}</th>
+			<td>
+				<img
+					[src]="product.photoUrl"
+					class="me-2"
+					style="width: 50px"
+				/>
+				{{ product.nameProduct }}
+			</td>
+			<td>{{ product.color }}</td>
+
+			<td>{{ product.price  }}$</td>
+			<td>{{ product.catogery }}</td>
+			
+		</tr>
+	</tbody>
+</table>
+</body>
